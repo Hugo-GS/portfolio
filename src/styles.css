@@ -1,1 +1,51 @@
-/* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+:root {
+    --color-bg_dim: #252423;
+    --color-red: #ea6962;
+    --color-green: #89b482;
+    --color-green_light: #a9b665;
+    --color-blue: #7daea3;
+    --color-blue-aqua: #c0e8d8;
+    --color-yellow_light: #f5ead4;
+    --color-yellow_light_diff: #c7c3bad5;
+    --color-yellow: #d8a657;
+    --color-orange: #e78a4e;
+    --color-aqua: #89b482;
+    --color-purple: #d3869b;
+    --color-bg_diff_blue: #0f3a42;
+    --color-bg__diff_blue_aqua: #215962;
+    --color-bg_diff_red: #472322;
+    --color-bg_visual_yellow: #574833;
+    --color-grey0: #7c6f64;
+    --color-grey1: #928374;
+    --color-grey2: #a89984;
+    --weight-border: 3px;
+
+    --color-text-nav: var(--color-yellow_light);
+    --color-border: var(--color-blue-aqua);
+    --border-radius-elements: 10px;
+    --color-border-project: var(--color-aqua);
+    --color-yellow-label: #d8a75719;
+    --color-orange-label: #e78a4e19;
+    --color-red-label: #ea696219;
+    --color-bg_diff_blue-label: #0f3a4219;
+    --color-green-bold: #417e38;
+    --color-green-bold-label: #417e3819;
+    --color-grey: #dcdcdc;
+    --color-grey-label: #dcdcdc19;
+    --color-bg-body: #282828;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+}
+
+body {
+    /*width: 100vw;*/
+    height: 100vh;
+    background-color: var(--color-bg-body);
+}
