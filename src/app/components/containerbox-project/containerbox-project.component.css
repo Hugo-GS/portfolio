@@ -1,119 +1,143 @@
-.containerBox-small {
-    width: 400px;
-    border: var(--weight-border) solid transparent;
-    border-radius: 10px;
-    overflow: hidden;
-    font-family: "Ubuntu", sans-serif;
-    background-color: var(--color-bg_dim);
-    transition: border 0.3s;
+:host {
+  --width-box: 425px;
+}
 
-    &:hover {
-        border: var(--weight-border) solid var(--color-border-project);
-    }
+.containerBox-small {
+  width: var(--width-box);
+  border: var(--weight-border) solid transparent;
+  border-radius: 10px;
+  overflow: hidden;
+  font-family: "Ubuntu", sans-serif;
+  background-color: var(--color-bg_dim);
+  transition: border 0.3s;
+
+  &:hover {
+    border: var(--weight-border) solid var(--color-border-project);
+  }
 }
 
 .containerBox-header {
-    display: flex;
-    align-items: center;
-    background-color: var(--color-bg_visual_yellow);
-    padding: 10px;
-    position: relative;
+  display: flex;
+  align-items: center;
+  background-color: var(--color-bg_visual_yellow);
+  padding: 10px;
+  position: relative;
 }
 
 .circle {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: filter 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.3s;
 }
 
 .circle:hover {
-    filter: brightness(0.9);
+  filter: brightness(0.9);
 }
 
 .group-circle {
-    display: flex;
-    column-gap: 5px;
-    position: absolute;
-    right: 10px;
+  display: flex;
+  column-gap: 5px;
+  position: absolute;
+  right: 10px;
 }
 
 .close {
-    background-color: var(--color-red);
+  background-color: var(--color-red);
 }
 
 .minimize {
-    background-color: var(--color-yellow);
+  background-color: var(--color-yellow);
 }
 
 .title-group {
-    flex-grow: 1;
-    color: var(--color-yellow_light_diff);
+  flex-grow: 1;
+  color: var(--color-yellow_light_diff);
 }
 
 .title {
-    text-align: center;
-    font-weight: bold;
-    color: var(--color-yellow_light);
+  white-space: nowrap;
+  text-align: center;
+  font-weight: bold;
+  color: var(--color-yellow_light);
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .containerBox-body {
-    background-color: var(--color-bg_dim);
-    color: var(--color-yellow_light);
-    overflow: hidden;
+  background-color: var(--color-bg_dim);
+  color: var(--color-yellow_light);
+  overflow: hidden;
 }
 
 .containerBox-body > picture {
-    display: block;
-    width: 100%;
+  display: block;
+  width: 100%;
+  height: 225px;
+  overflow: hidden;
+
+  background-image: linear-gradient(#303030 2px, transparent 2px),
+    linear-gradient(to right, #303030 2px, transparent 2px);
+  background-size: 32px 32px;
+  background-color: var(--color-body);
+}
+.containerBox-body > picture > img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  transition: scale 0.3s;
+}
+.containerBox-small:hover picture > img {
+  scale: 1.1;
 }
 
 .containerBox-body-description {
-    padding: 10px;
+  padding: 10px;
 }
 .containerBox-body-technologies {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 5px;
-    padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  padding: 10px;
 }
 .label-technology {
-    display: flex;
-    width: fit-content;
-    align-items: center;
-    gap: 2px;
-    border-radius: var(--border-radius-elements);
-    border: 1px solid transparent;
-    padding: 2px 5px;
+  display: flex;
+  width: fit-content;
+  align-items: center;
+  gap: 2px;
+  border-radius: var(--border-radius-elements);
+  border: 1px solid transparent;
+  padding: 2px 5px;
 }
 .label-technology-yellow {
-    border: 1px solid var(--color-yellow);
-    background-color: var(--color-yellow-label);
+  border: 1px solid var(--color-yellow);
+  background-color: var(--color-yellow-label);
 }
 .label-technology-orange {
-    border: 1px solid var(--color-orange);
-    background-color: var(--color-orange-label);
+  border: 1px solid var(--color-orange);
+  background-color: var(--color-orange-label);
 }
 .label-technology-red {
-    border: 1px solid var(--color-red);
-    background-color: var(--color-red-label);
+  border: 1px solid var(--color-red);
+  background-color: var(--color-red-label);
 }
 
 .label-technology-blue {
-    border: 1px solid var(--color-bg_diff_blue);
-    background-color: var(--color-bg_diff_blue-label);
+  border: 1px solid var(--color-bg_diff_blue);
+  background-color: var(--color-bg_diff_blue-label);
 }
 
 .label-technology-green {
-    border: 1px solid var(--color-green-bold);
-    background-color: var(--color-green-bold-label);
+  border: 1px solid var(--color-green-bold);
+  background-color: var(--color-green-bold-label);
 }
 
 .label-technology-grey {
-    border: 1px solid var(--color-grey);
-    background-color: var(--color-grey-label);
+  border: 1px solid var(--color-grey);
+  background-color: var(--color-grey-label);
 }

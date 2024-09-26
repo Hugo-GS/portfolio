@@ -1,6 +1,6 @@
 [
   {
-    "Title": "Proyecto Compilador para graficos UML",
+    "Title": "Compilador de graficos UML",
     "ImgSrc": "",
     "Langs":["Python"],
     "Frameworks": [],
@@ -17,6 +17,14 @@
   },
   {
     "Title": "Generador TOML Users",
+    "ImgSrc": "",
+    "Langs": ["Python"],
+    "Frameworks": [],
+    "Libraries": ["TKinter", "OpenPyxl"],
+    "DescripcionContent": "Generador TOML Users para BOCA(BOCA Online Contest Administrator)"
+  },
+  {
+    "Title": "Lenguajes & Frameworks API",
     "ImgSrc": "",
     "Langs": ["Python"],
     "Frameworks": [],

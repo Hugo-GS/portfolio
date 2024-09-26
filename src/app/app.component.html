@@ -1,10 +1,8 @@
 <header>
-    <app-navbar-top [activeSection]="activeSection"></app-navbar-top>
+  <app-navbar-top [activeSection]="activeSection"></app-navbar-top>
 </header>
 <section class="hero" id="hero">
-    <app-containerbox
-    [svgIconWindow]="svgIcon"
-    [titleContainer]="titleContainerHero">
+  <app-containerbox [svgIconWindow]="svgIcon" [titleContainer]="titleContainerHero">
     <div class="contentHero">
       <div>
         <span class="command-line-text">
@@ -62,16 +60,20 @@
         <app-donut-animation></app-donut-animation>
       </div>
     </div>
-    </app-containerbox>
+  </app-containerbox>
 </section>
 
 
 <section class="projects" id="projects">
-    <app-containerbox-project
-      [title]="'Hola mundo'"
-      [shortDescription]="''"
-      [imgSrc]="''"
-      ></app-containerbox-project>
+  <h2>PROYECTOS</h2>
+  <div class="box-projects">
+    <ng-container>
+      <app-containerbox-project [title]="'Compilador de graficos UML'" [shortDescription]="''" [imgSrc]="'img/imgpj_1.png'"></app-containerbox-project>
+      <app-containerbox-project [title]="'Gestor de Inventarios'" [shortDescription]="''" [imgSrc]="'img/imgpj_2.png'"></app-containerbox-project>
+      <app-containerbox-project [title]="'Generador TOML Users'" [shortDescription]="''" [imgSrc]="'img/imgpj_2.png'"></app-containerbox-project>
+      <app-containerbox-project [title]="'Lenguajes & Frameworks API'" [shortDescription]="''" [imgSrc]="'img/imgpj_1.png'"></app-containerbox-project>
+    </ng-container>
+  </div>
 </section>
 
 <section class="contact-email" id="contact">

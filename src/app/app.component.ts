@@ -23,7 +23,7 @@ import { DonutAnimationComponent } from "./components/donut-animation/donut-anim
   styleUrl: "./app.component.css",
 })
 export class AppComponent {
-  title = "portfolio";
+  title = "Portfolio";
   sections: any[] = [
     { id: 'hero', name: 'Inicio' },
     { id: 'projects', name: 'Proyectos' },
@@ -31,7 +31,7 @@ export class AppComponent {
   ];
 
 
-  titleContainerHero = " ";
+  titleContainerHero = "";
 
   svgIcon = /*html*/`
     <svg xmlns="http://www.w3.org/2000/svg"

@@ -1,27 +1,49 @@
 header {
-    width: 100%;
-    padding: 20px 20px 0 20px;
-    position: fixed;
-    background-color: var(--color-bg-body);
-    z-index: 1;
+  width: 100%;
+  padding: 20px 20px 0 20px;
+  position: fixed;
+  background-color: var(--color-bg-body);
+  z-index: 1;
 }
 .hero {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    padding: 120px 20px 60px 20px;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  padding: 120px 20px 60px 20px;
 }
 .contact-email {
-    width: 100%;
-    padding: 80px 0px;
-    background-color: var(--color-bg_dim);
+  width: 100%;
+  padding: 80px 0px;
+  background-color: var(--color-bg_dim);
 }
 .projects {
-    display: flex;
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 80px 0;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+  background-color: inherit;
+}
+.projects > h2 {
+  display: block;
+  width: 100%;
+  min-width: 300px;
+  max-width: 900px;
+  text-align: start;
+  font-family: "Ubuntu", sans-serif;
+  color: var(--color-green);
+  margin-bottom: 20px;
+}
+.box-projects {
+  display: grid;
+  grid-template-columns: auto auto;
+  place-content: center;
+  grid-column-gap: 40px;
+  grid-row-gap: 40px;
+  width: 100%;
+  min-width: 300px;
+  max-width: 900px;
 }
 .contentHero {
   display: grid;
@@ -32,9 +54,8 @@ header {
 }
 .contentHero h1 {
   font-size: 2.2rem;
-
 }
-.command-line-text{
+.command-line-text {
   display: block;
   font-weight: bold;
   margin-bottom: 10px;
@@ -43,7 +64,7 @@ header {
 .descriptions {
   font-size: 1.4rem;
 }
-.descriptions-line{
+.descriptions-line {
   display: flex;
   margin-bottom: 6px;
   align-items: center;
@@ -52,11 +73,11 @@ header {
   color: var(--color-blue);
   font-weight: bold;
 }
-.label-description span{
+.label-description span {
   color: var(--color-yellow_light);
 }
 
-.descriptions .label-description.line-title{
+.descriptions .label-description.line-title {
   color: var(--color-green_light);
 }
 
@@ -68,13 +89,22 @@ header {
 }
 
 @keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 @keyframes blink-caret {
-  from, to { border-color: transparent; }
-  50% { border-color: var(--color-green); }
+  from,
+  to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: var(--color-green);
+  }
 }
 @media (max-width: 910px) {
   .contentHero {
