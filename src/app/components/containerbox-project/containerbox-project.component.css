@@ -6,6 +6,7 @@
     font-family: "Ubuntu", sans-serif;
     background-color: var(--color-bg_dim);
     transition: border 0.3s;
+
     &:hover {
         border: var(--weight-border) solid var(--color-border-project);
     }

@@ -6,10 +6,10 @@
                 alt=""
             />
         </a>
-        <a href="" class="item_nav active"> Inicio </a>
-        <a href="" class="item_nav"> Proyectos </a>
-        <a href="" class="item_nav"> Contactame </a>
+        <a (click)="scrollTo('hero')" class="item_nav" [ngClass]="{'active': activeSection === 'hero'}">Inicio</a>
+        <a (click)="scrollTo('projects')" class="item_nav" [ngClass]="{'active': activeSection === 'projects'}">Proyectos</a>
+        <a (click)="scrollTo('contact')" class="item_nav" [ngClass]="{'active': activeSection === 'contact'}">Contáctame</a>
     </div>
-    <span class="text-clock"> 18 de sep 13:19 </span>
+    <span class="text-clock"> {{ currentTime }} </span>
     <button class="item_nav">Modo claro</button>
 </nav>

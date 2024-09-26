@@ -1,6 +1,7 @@
 <div class="containerBox-main">
     <div class="containerBox-header">
-        <div class="title">TituloVentana</div>
+        <div class="iconWindow"></div>
+        <div class="title">{{titleContainer}}</div>
         <div class="group-circle">
             <div class="circle minimize">
                 <svg viewBox="0 0 24 24" width="12" height="12">
@@ -37,6 +38,6 @@
         </div>
     </div>
     <div class="containerBox-body">
-        <!-- Contenido de la ventana -->
+        <ng-content></ng-content>
     </div>
 </div>

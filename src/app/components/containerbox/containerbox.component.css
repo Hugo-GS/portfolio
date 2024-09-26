@@ -1,5 +1,4 @@
 .containerBox-main {
-    width: 400px;
     border: var(--weight-border) solid var(--color-border);
     border-radius: 10px;
     overflow: hidden;

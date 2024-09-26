@@ -1,13 +1,80 @@
 <header>
-    <app-navbar-top></app-navbar-top>
+    <app-navbar-top [activeSection]="activeSection"></app-navbar-top>
 </header>
-<section class="hero">
-    <app-containerbox></app-containerbox>
+<section class="hero" id="hero">
+    <app-containerbox
+    [svgIconWindow]="svgIcon"
+    [titleContainer]="titleContainerHero">
+    <div class="contentHero">
+      <div>
+        <span class="command-line-text">
+          <span style="color: var(--color-green_light);">➜</span>&nbsp;
+          <span style="color: var(--color-green);">~</span>&nbsp;self_fetch
+        </span>
+        <h1>
+          Hugo Grimaldos Suárez <br>
+          ---------------------
+        </h1>
+
+        <div class="descriptions">
+          <div class="descriptions-line">
+            <span class="label-description">
+              Ról<span>:&nbsp;</span>
+            </span>
+            <span>
+              Desarrollador de Software
+            </span>
+          </div>
+          <br>
+          <div class="descriptions-line">
+            <span class="label-description line-title">
+              Lenguajes && Tecnologias
+            </span>
+          </div>
+          <div class="descriptions-line">
+            <span class="label-description">
+              ➜&nbsp;Python<span>:&nbsp;</span>
+            </span>
+            <span>
+              Flask - FastAPI - Bottle
+            </span>
+          </div>
+          <div class="descriptions-line">
+            <span class="label-description">
+              ➜&nbsp;JavaScript<span>:&nbsp;</span>
+            </span>
+            <span>
+              Express
+            </span>
+          </div>
+          <div class="descriptions-line">
+            <span class="label-description">
+              ➜&nbsp;TypeScript<span>:&nbsp;</span>
+            </span>
+            <span>
+              Angular - Express
+            </span>
+          </div>
+
+        </div>
+      </div>
+      <div>
+        <app-donut-animation></app-donut-animation>
+      </div>
+    </div>
+    </app-containerbox>
 </section>
-<section class="contact-email">
-    <app-form-contact-email></app-form-contact-email>
+
+
+<section class="projects" id="projects">
+    <app-containerbox-project
+      [title]="'Hola mundo'"
+      [shortDescription]="''"
+      [imgSrc]="''"
+      ></app-containerbox-project>
 </section>
-<section class="projects">
-    <app-containerbox-project></app-containerbox-project>
+
+<section class="contact-email" id="contact">
+  <app-form-contact-email></app-form-contact-email>
 </section>
 <app-footer-contact></app-footer-contact>

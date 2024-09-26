@@ -1,7 +1,7 @@
 <div class="containerBox-small">
     <div class="containerBox-header">
         <div class="title-group">
-            . / . . / projects / <span class="title">UMLGenerator</span>
+            . / . . / projects / <span class="title">{{title}}</span>
         </div>
         <div class="group-circle">
             <div class="circle minimize">
@@ -41,13 +41,13 @@
     <div class="containerBox-body">
         <picture>
             <img
-                src="https://th.bing.com/th/id/OIP.DULhS2wnHd7lqKdaSyROjwHaEK?rs=1&pid=ImgDetMain"
+                [src]="imgSrc"
                 alt=""
                 srcset=""
             />
         </picture>
         <div class="containerBox-body-description">
-            Generador de diagramas DB.
+            {{shortDescription}}
         </div>
         <div class="containerBox-body-technologies">
             <div class="label-technology label-technology-yellow">

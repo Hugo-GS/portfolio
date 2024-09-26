@@ -1,0 +1,26 @@
+[
+  {
+    "Title": "Proyecto Compilador para graficos UML",
+    "ImgSrc": "",
+    "Langs":["Python"],
+    "Frameworks": [],
+    "Libraries": [],
+    "DescripcionContent": "<p>Este proyecto se realizo para poder agilizar la creación de diagramas UML y como una nueva propuesta de lenguaje para programar estos diagramas tomando de inspiración Python.</p> # Desarrollo"
+  },
+  {
+    "Title": "Gestor de Inventarios",
+    "ImgSrc": "",
+    "Langs": ["Python"],
+    "Frameworks": ["Flask"],
+    "Libraries": [],
+    "DescripcionContent": "<h2>Introducción</h2><p>Este proyecto es un gestor de inventarios para pequeñas empresas.</p>"
+  },
+  {
+    "Title": "Generador TOML Users",
+    "ImgSrc": "",
+    "Langs": ["Python"],
+    "Frameworks": [],
+    "Libraries": ["TKinter", "OpenPyxl"],
+    "DescripcionContent": "Generador TOML Users para BOCA(BOCA Online Contest Administrator)"
+  }
+]

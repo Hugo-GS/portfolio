@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 
 @Component({
   selector: 'app-containerbox-project',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
   styleUrl: './containerbox-project.component.css'
 })
 export class ContainerboxProjectComponent {
+  @Input() title: string = "";
+  @Input() shortDescription: string = "";
+  @Input() imgSrc: string = "";
+
+  @Input() technologies: string[] = [];
+  @Input() langs: string[] = [];
 
 }

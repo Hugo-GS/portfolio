@@ -9,15 +9,75 @@ header {
     display: flex;
     width: 100%;
     justify-content: center;
-    padding: 120px 60px 60px 60px;
+    padding: 120px 20px 60px 20px;
 }
 .contact-email {
     width: 100%;
+    padding: 80px 0px;
+    background-color: var(--color-bg_dim);
 }
 .projects {
     display: flex;
     width: 100%;
     flex-wrap: wrap;
     justify-content: center;
-    padding: 60px 0;
+    padding: 80px 0;
+}
+.contentHero {
+  display: grid;
+  grid-template-columns: 425px 425px;
+  column-gap: 20px;
+  font-family: "Ubuntu Mono", monospace;
+  color: var(--color-yellow_light);
+}
+.contentHero h1 {
+  font-size: 2.2rem;
+
+}
+.command-line-text{
+  display: block;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+.descriptions {
+  font-size: 1.4rem;
+}
+.descriptions-line{
+  display: flex;
+  margin-bottom: 6px;
+  align-items: center;
+}
+.descriptions .label-description {
+  color: var(--color-blue);
+  font-weight: bold;
+}
+.label-description span{
+  color: var(--color-yellow_light);
+}
+
+.descriptions .label-description.line-title{
+  color: var(--color-green_light);
+}
+
+.typing {
+  border-right: 2px solid var(--color-green);
+  white-space: nowrap;
+  overflow: hidden;
+  animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0; }
+  to { width: 100%; }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-green); }
+}
+@media (max-width: 910px) {
+  .contentHero {
+    grid-template-columns: 400px;
+  }
 }

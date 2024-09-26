@@ -1,7 +1,8 @@
 footer {
+    font-family: "Ubuntu", sans-serif;
     background-color: var(--color-bg_dim);
     color: var(--color-grey2);
-    padding: 20px;
+    padding: 35px 20px;
 }
 
 .footer-container {

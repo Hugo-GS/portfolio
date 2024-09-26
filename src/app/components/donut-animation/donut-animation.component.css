@@ -1,0 +1,8 @@
+#d {
+  width: 500px;
+  font-family: monospace;
+  white-space: pre;
+  display: block;
+  margin-left: -90px;/* Restando el tamaño de espacios en blanco del dibujado de la dona */
+  padding-bottom: 10px;
+}
