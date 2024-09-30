@@ -52,6 +52,8 @@ export class AppComponent {
     this.onScroll();
   }
 
+
+
   @HostListener('window:scroll', [])
   onScroll() {
     const scrollPosition = window.scrollY;
@@ -62,11 +64,12 @@ export class AppComponent {
         const sectionTop = sectionElement.offsetTop;
         const sectionHeight = sectionElement.offsetHeight;
 
-        if (scrollPosition+80 >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+        if (scrollPosition+120 >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
           this.activeSection = section.id;
         }
       }
     });
   }
+
 
 }

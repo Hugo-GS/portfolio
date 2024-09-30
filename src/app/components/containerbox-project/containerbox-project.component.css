@@ -13,6 +13,7 @@
 
   &:hover {
     border: var(--weight-border) solid var(--color-border-project);
+    cursor: pointer;
   }
 }
 

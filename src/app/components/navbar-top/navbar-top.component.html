@@ -1,8 +1,8 @@
 <nav>
     <div class="group-items_nav">
-        <a (click)="scrollTo('hero')" class="item_nav">
+        <a (click)="scrollTo('hero')" class="item_nav icon">
             <img
-                src="https://cdn.icon-icons.com/icons2/3781/PNG/512/linux_icon_231994.png"
+                src="img/icon_navbar.webp"
                 alt=""
             />
         </a>
@@ -11,5 +11,5 @@
         <a (click)="scrollTo('contact')" class="item_nav" [ngClass]="{'active': activeSection === 'contact'}">Contáctame</a>
     </div>
     <span class="text-clock"> {{ currentTime }} </span>
-    <button class="item_nav">Modo claro</button>
+    <!-- <button class="item_nav">Modo claro</button> -->
 </nav>

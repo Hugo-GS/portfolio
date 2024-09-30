@@ -1,4 +1,4 @@
-<div class="containerBox-small">
+<div class="containerBox-small" (click)="openModal()">
   <div class="containerBox-header">
     <div class="title-group">
       . / projects / <span class="title">{{title}}</span>
@@ -37,3 +37,8 @@
     </div>
   </div>
 </div>
+<app-modal-project
+  *ngIf="isModalOpen"
+
+>
+</app-modal-project>

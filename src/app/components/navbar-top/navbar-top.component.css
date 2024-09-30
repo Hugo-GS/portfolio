@@ -24,13 +24,15 @@ nav > .group-items_nav {
   right: 46%;
   color: var(--color-text-nav);
 }
+
 .item_nav {
   text-decoration: none;
   border-radius: 15px;
   background-color: inherit;
   padding: 5px 10px;
   font-weight: normal;
-  transition: filter 0.3s;
+  transition: filter 0.3s,
+  padding 0.3s;
   color: var(--color-text-nav);
   border: 2px solid transparent;
   &:hover {
@@ -45,5 +47,24 @@ nav > .group-items_nav {
 
 a > img {
   display: block;
-  width: 1.5rem;
+  width: 2.2rem;
+  /*width: 1.5rem;*/
+}
+.item_nav.icon{
+  padding: 0;
+  margin: 0 5px;
+}
+
+@media (max-width: 1100px) {
+  .item_nav{
+    padding: 5px 5px;
+  }
+  .text-clock{
+    right: 5%;
+  }
+}
+@media (max-width: 660px) {
+  .text-clock{
+    display: none;
+  }
 }
