@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter  } from '@angular/core';
 import { LabelTechnologyComponent, Technology } from "../label-technology/label-technology.component";
 import { CommonModule } from '@angular/common';
 
@@ -7,7 +7,7 @@ import { CommonModule } from '@angular/common';
   standalone: true,
   imports: [LabelTechnologyComponent, CommonModule],
   templateUrl: './modal-project.component.html',
-  styleUrl: './modal-project.component.css'
+  styleUrls: ['./modal-project.component.css']
 })
 export class ModalProjectComponent {
   @Input() title: string = "";
@@ -16,6 +16,11 @@ export class ModalProjectComponent {
   @Input() langs: Technology[] = [];
   @Input() libraries: Technology[] = [];
   @Input() frameworks: Technology[] = [];
-  @Input() descriptionHTML: string = "";
+  @Input() descriptionHTML: string =``;
+  @Output() close = new EventEmitter<void>();
+
+  closeModal() {
+    this.close.emit();
+  }
 
 }

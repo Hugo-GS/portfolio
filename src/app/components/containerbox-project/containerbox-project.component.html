@@ -39,6 +39,10 @@
 </div>
 <app-modal-project
   *ngIf="isModalOpen"
-
+  (close)="closeModal()"
+  [srcImgBg]="imgSrc"
+  [title]="title"
+  [langs]="langs"
+  
 >
 </app-modal-project>

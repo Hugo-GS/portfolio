@@ -24,4 +24,9 @@ export class ContainerboxProjectComponent {
   openModal() {
     this.isModalOpen = true;
   }
+
+  closeModal() {
+    this.isModalOpen = false; // Manejar el cierre del modal
+  }
+
 }
