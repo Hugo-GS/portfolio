@@ -1,5 +1,4 @@
 import { Component, HostListener, OnInit } from "@angular/core";
-import { RouterOutlet } from "@angular/router";
 import { NavbarTopComponent } from "./components/navbar-top/navbar-top.component";
 import { ContainerboxComponent } from "./components/containerbox/containerbox.component";
 import { FormContactEmailComponent } from "./components/form-contact-email/form-contact-email.component";
@@ -15,7 +14,6 @@ import { CommonModule } from "@angular/common";
   standalone: true,
   imports: [
     CommonModule,
-    RouterOutlet,
     NavbarTopComponent,
     ContainerboxComponent,
     FormContactEmailComponent,

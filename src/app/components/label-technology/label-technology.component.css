@@ -18,9 +18,7 @@
   --color-green-bold-label: #417e3819;
   --color-grey-bg: #dcdcdc;
   --color-grey-label: #dcdcdc19;
-
 }
-
 .label-technology {
   display: flex;
   width: fit-content;
@@ -42,32 +40,26 @@
   border: 1px solid var(--color-red-bg);
   background-color: var(--color-red-label);
 }
-
 .label-technology-diff_blue {
   border: 1px solid var(--color-diff_blue-bg);
   background-color: var(--color-diff_blue-label);
 }
-
 .label-technology-green {
   border: 1px solid var(--color-green-bold-bg);
   background-color: var(--color-green-bold-label);
 }
-
 .label-technology-grey {
   border: 1px solid var(--color-grey-bg);
   background-color: var(--color-grey-label);
 }
-
 .label-technology-blue_aqua {
   border: 1px solid var(--color-blue-aqua-bg);
   background-color: var(--color-blue-aqua-label);
 }
-
 .label-technology-purple {
   border: 1px solid var(--color-purple-bg);
   background-color: var(--color-purple-label);
 }
-
 .label-technology-blue {
   border: 1px solid var(--color-blue-bg);
   background-color: var(--color-blue-label);

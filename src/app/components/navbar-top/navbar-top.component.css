@@ -10,21 +10,18 @@ nav {
   font-family: "Ubuntu", sans-serif;
   border: 3px solid var(--color-blue-aqua);
 }
-
 nav > .group-items_nav {
   display: flex;
   align-items: center;
   background-color: inherit;
   gap: 5px;
 }
-
 .text-clock {
   position: absolute;
   display: block;
   right: 46%;
   color: var(--color-text-nav);
 }
-
 .item_nav {
   text-decoration: none;
   border-radius: 15px;
@@ -40,11 +37,9 @@ nav > .group-items_nav {
   }
   cursor: pointer;
 }
-
 .item_nav.active {
   border: 2px solid var(--color-green);
 }
-
 a > img {
   display: block;
   width: 2.2rem;
@@ -54,7 +49,6 @@ a > img {
   padding: 0;
   margin: 0 5px;
 }
-
 @media (max-width: 1100px) {
   .item_nav{
     padding: 5px 5px;

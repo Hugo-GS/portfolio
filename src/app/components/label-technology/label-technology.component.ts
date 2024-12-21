@@ -1,20 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
-
-export enum Technology {
-  Angular = 'Angular',
-  JavaScript = 'JavaScript',
-  HTML5 = 'HTML5',
-  Python = 'Python',
-  NodeJS = 'NodeJS',
-  Flask = 'Flask',
-  Bottle = 'Bottle',
-  FastAPI = 'FastAPI',
-  Express = 'Express',
-  TypeScript = 'TypeScript',
-  Default = 'default'
-}
-
+import { Technology } from './enums/technology.enum';
+import { TECHNOLOGY_ICONS } from './constants/technology-icons';
 
 @Component({
   selector: 'app-label-technology',
@@ -25,31 +12,26 @@ export enum Technology {
 })
 export class LabelTechnologyComponent {
   @Input() technology: Technology = Technology.Default;
-
   get technologyClass(): string {
-    switch (this.technology) {
-      case Technology.Angular:
-        return 'label-technology-red';
-      case Technology.JavaScript:
-        return 'label-technology-yellow';
-      case Technology.HTML5:
-        return 'label-technology-orange';
-      case Technology.Python:
-        return 'label-technology-diff_blue';
-      case Technology.NodeJS:
-        return 'label-technology-green';
-      case Technology.Flask:
-        return 'label-technology-black';
-      case Technology.Bottle:
-        return 'label-technology-purple';
-      case Technology.FastAPI:
-        return 'label-technology-blue_aqua';
-      case Technology.Express:
-        return 'label-technology-grey';
-      case Technology.TypeScript:
-        return 'label-technology-lightblue';
-      default:
-        return '';
-    }
+    const classMap = {
+      [Technology.Angular]: 'label-technology-red',
+      [Technology.JavaScript]: 'label-technology-yellow',
+      [Technology.HTML5]: 'label-technology-orange',
+      [Technology.Python]: 'label-technology-diff_blue',
+      [Technology.NodeJS]: 'label-technology-green',
+      [Technology.Flask]: 'label-technology-black',
+      [Technology.Bottle]: 'label-technology-purple',
+      [Technology.FastAPI]: 'label-technology-blue_aqua',
+      [Technology.Express]: 'label-technology-grey',
+      [Technology.TypeScript]: 'label-technology-lightblue',
+      [Technology.Default]: 'label-technology-default'
+    };
+
+    return classMap[this.technology] || '';
+  }
+
+  getIconPath(): string {
+    const icon = TECHNOLOGY_ICONS.find(i => i.name === this.technology);
+    return icon?.path ?? '';
   }
 }
