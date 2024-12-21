@@ -23,12 +23,14 @@ export class LabelTechnologyComponent {
       [Technology.HTML5]: 'label-technology-orange',
       [Technology.Python]: 'label-technology-diff_blue',
       [Technology.NodeJS]: 'label-technology-green',
-      [Technology.Flask]: 'label-technology-black',
+      [Technology.Flask]: 'label-technology-grey',
       [Technology.Bottle]: 'label-technology-purple',
       [Technology.FastAPI]: 'label-technology-blue_aqua',
       [Technology.Express]: 'label-technology-grey',
       [Technology.TypeScript]: 'label-technology-lightblue',
-      [Technology.Default]: 'label-technology-default'
+      [Technology.OpenPyxl]: 'label-technology-grey',
+      [Technology.TKinter]: 'label-technology-grey',
+      [Technology.Default]: 'label-technology-grey'
     };
 
     return classMap[this.technology] || '';

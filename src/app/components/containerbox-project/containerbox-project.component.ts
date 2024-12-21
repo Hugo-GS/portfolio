@@ -16,8 +16,9 @@ export class ContainerboxProjectComponent {
   @Input() title: string = "";
   @Input() shortDescription: string = "";
   @Input() imgSrc: string = "";
-  @Input() technologies: Technology[] = [Technology.Angular]; // Ejemplo luego borrar
-  @Input() langs: Technology[] = [Technology.JavaScript]; // Ejemplo luego borrar
+  @Input() technologies: Technology[] = [];
+  @Input() langs: Technology[] = [];
+  @Input() descriptionContent: string = "";
 
   isModalOpen: boolean = false;
 

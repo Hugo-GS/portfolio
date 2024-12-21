@@ -6,8 +6,9 @@ import { ContainerboxProjectComponent } from "./components/containerbox-project/
 import { FooterContactComponent } from "./components/footer-contact/footer-contact.component";
 import { DonutAnimationComponent } from "./components/donut-animation/donut-animation.component";
 import { Section } from './models/section.interface';
-import { Project } from './models/project.interface';
+import { Project, ProjectJSON } from './models/project.interface';
 import { CommonModule } from "@angular/common";
+import { Technology } from "./components/label-technology/enums/technology.enum";
 
 @Component({
   selector: "app-root",
@@ -26,7 +27,6 @@ import { CommonModule } from "@angular/common";
 })
 export class AppComponent implements OnInit {
   readonly title = "Portfolio";
-
   readonly sections: Section[] = [
     { id: 'hero', name: 'Inicio' },
     { id: 'projects', name: 'Proyectos' },
@@ -34,7 +34,6 @@ export class AppComponent implements OnInit {
   ];
 
   readonly titleContainerHero = "";
-
   readonly svgIcon = /*html*/`
     <svg xmlns="http://www.w3.org/2000/svg"
       width="24" height="24"
@@ -45,35 +44,56 @@ export class AppComponent implements OnInit {
     </svg>
   `;
 
-  projects: Project[] = [
-    {
-      title: 'Compilador de graficos UML',
-      shortDescription: '',
-      imgSrc: 'img/imgpj_1.png'
-    },
-    {
-      title: 'Gestor de Inventarios',
-      shortDescription: '',
-      imgSrc: 'img/imgpj_2.png'
-    },
-    {
-      title: 'Generador TOML Users',
-      shortDescription: '',
-      imgSrc: 'img/imgpj_2.png'
-    },
-    {
-      title: 'Lenguajes & Frameworks API',
-      shortDescription: '',
-      imgSrc: 'img/imgpj_1.png'
-    }
-  ];
-
+  projects: Project[] = [];
   activeSection: string = 'hero';
-
   private readonly SCROLL_OFFSET = 120;
 
   ngOnInit(): void {
+    this.loadProjects();
     this.onScroll();
+  }
+
+  private stringToTechnology(tech: string): Technology {
+    return Technology[tech as keyof typeof Technology] || Technology.Default;
+  }
+
+  private mapJSONToProject(jsonProject: ProjectJSON): Project {
+    return {
+      title: jsonProject.Title,
+      imgSrc: jsonProject.ImgSrc || 'img/imgpj_1.png',
+      langs: jsonProject.Langs.map(lang => this.stringToTechnology(lang)),
+      frameworks: jsonProject.Frameworks.map(framework => this.stringToTechnology(framework)),
+      libraries: jsonProject.Libraries.map(library => this.stringToTechnology(library)),
+      descriptionContent: jsonProject.DescripcionContent,
+      shortDescription: ''
+    };
+  }
+
+  getCombinedTechnologies(project: Project): Technology[] {
+    return [...project.frameworks, ...project.libraries];
+  }
+
+  async loadProjects() {
+    try {
+      const response = await fetch('/files_data_projects/data_projects.json');
+      if (!response.ok) {
+        throw new Error('No se pudo cargar el archivo JSON');
+      }
+      const projectsJSON: ProjectJSON[] = await response.json();
+      this.projects = projectsJSON.map(project => this.mapJSONToProject(project));
+    } catch (error) {
+      console.error('Error al cargar los proyectos:', error);
+      // Proyecto por defecto en caso de error
+      this.projects = [{
+        title: 'Compilador de graficos UML',
+        shortDescription: '',
+        imgSrc: 'img/imgpj_1.png',
+        langs: [],
+        frameworks: [],
+        libraries: [],
+        descriptionContent: ''
+      }];
+    }
   }
 
   @HostListener('window:scroll', [])

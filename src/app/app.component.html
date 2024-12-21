@@ -76,9 +76,12 @@
     <app-containerbox-project
       *ngFor="let project of projects"
       [title]="project.title"
-      [shortDescription]="project.shortDescription"
-      [imgSrc]="project.imgSrc">
-    </app-containerbox-project>
+      [shortDescription]="project.shortDescription || ''"
+      [imgSrc]="project.imgSrc"
+      [langs]="project.langs"
+      [technologies]="getCombinedTechnologies(project)"
+      [descriptionContent]="project.descriptionContent"
+    ></app-containerbox-project>
   </div>
 </section>
 

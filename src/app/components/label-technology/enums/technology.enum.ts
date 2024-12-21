@@ -9,5 +9,7 @@ export enum Technology {
   FastAPI = 'FastAPI',
   Express = 'Express',
   TypeScript = 'TypeScript',
+  OpenPyxl = 'OpenPyxl',
+  TKinter = 'TKinter',
   Default = 'default'
 }
