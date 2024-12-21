@@ -2,37 +2,38 @@
   --height-picture: 400px;
   --width-picture: 794px;
 }
-
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7); /* Oscurecimiento del fondo */
+  background-color: rgba(0, 0, 0, 0.7);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+  z-index: 1000;
+  overflow: hidden;
 }
 .modal {
   max-width: 800px;
   min-width: 569px;
   width: 90%;
-  height: 90%;
+  max-height: 90vh;
   background-color: var(--color-bg-body);
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border: 3px solid var(--color-border-project);
   font-family: var(--font-family-ui);
   color: var(--color-yellow_light);
-  z-index: 3;
-  overflow-y: scroll;
+  z-index: 1001;
+  overflow-y: auto;
+  position: relative;
   scrollbar-width:auto;
   scrollbar-color: #eaeaea #eaeaea;
 }
 .modal.show {
-  
+
 }
 .modal::-webkit-scrollbar {
   background: #eaeaea;
@@ -43,7 +44,7 @@
 }
 .modal::-webkit-scrollbar-thumb {
   background: #eaeaea;
-  border-radius: 4px; 
+  border-radius: 4px;
 }
 .modal:hover::-webkit-scrollbar-thumb {
   background: rgba(255, 255, 255, 0.5);
@@ -54,7 +55,7 @@ picture{
   object-fit: contain;
   overflow: hidden;
   display: block;
-  
+
 }
 .background-img {
   width: 100%;
@@ -78,25 +79,19 @@ picture{
   padding: 20px;
   align-items: center;
 }
-
 .label {
   font-weight: bold;
 }
-
-
 .languages ul li,
 .libraries ul li,
 .frameworks ul li{
   list-style: none;
   display: inline;
 }
-
 .content-description {
   padding: 20px;
   border-top: 2px solid #eaeaea;
-  
 }
-
 @media (max-width: 600px) {
   .title {
     font-size: 1.5em;
@@ -112,14 +107,12 @@ picture{
   display: flex;
   gap: 0.5rem;
   border: none;
-
   transition: color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
   transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
   background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   border-radius: 5px;
   font-weight: 800;
   place-content: center;
-
   padding: 0.75rem 1rem;
   font-size: 0.825rem;
   line-height: 1rem;
@@ -129,9 +122,18 @@ picture{
     inset 0 0 0 1px rgba(255, 255, 255, 0.04);
   color: var(--color-yellow_light);
 }
-
 .btn-github:hover {
   color: var(--color-yellow);
   transform: translate(0, -0.25rem);
   background-color: rgba(0, 0, 0, 0.677);
+}
+@media (max-width: 600px) {
+  .modal {
+    width: 95%;
+    min-width: auto;
+    max-height: 95vh;
+  }
+  .title {
+    font-size: 1.5em;
+  }
 }

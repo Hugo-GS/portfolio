@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter  } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
 import { LabelTechnologyComponent, Technology } from "../label-technology/label-technology.component";
 import { CommonModule } from '@angular/common';
 
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common';
   templateUrl: './modal-project.component.html',
   styleUrls: ['./modal-project.component.css']
 })
-export class ModalProjectComponent {
+export class ModalProjectComponent implements OnInit, OnDestroy {
   @Input() title: string = "";
   @Input() srcImgBg: string = "";
   @Input() hrefGitHubRepo: string = "";
@@ -19,8 +19,20 @@ export class ModalProjectComponent {
   @Input() descriptionHTML: string =``;
   @Output() close = new EventEmitter<void>();
 
+  ngOnInit(): void {
+    document.body.style.overflow = 'hidden';
+    const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.body.style.paddingRight = `${scrollbarWidth}px`;
+  }
+
+  ngOnDestroy(): void {
+    document.body.style.overflow = '';
+    document.body.style.paddingRight = '';
+  }
+
   closeModal() {
     this.close.emit();
   }
-
 }
+
+

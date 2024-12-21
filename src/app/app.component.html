@@ -50,10 +50,17 @@
               ➜&nbsp;TypeScript<span>:&nbsp;</span>
             </span>
             <span>
-              Angular - Express
+              Angular - NestJS
             </span>
           </div>
-
+          <div class="descriptions-line">
+            <span class="label-description">
+              ➜&nbsp;Contenedores<span>:&nbsp;</span>
+            </span>
+            <span>
+              Docker
+            </span>
+          </div>
         </div>
       </div>
       <div>
@@ -63,16 +70,15 @@
   </app-containerbox>
 </section>
 
-
 <section class="projects" id="projects">
   <h2>PROYECTOS</h2>
   <div class="box-projects">
-    <ng-container>
-      <app-containerbox-project [title]="'Compilador de graficos UML'" [shortDescription]="''" [imgSrc]="'img/imgpj_1.png'"></app-containerbox-project>
-      <app-containerbox-project [title]="'Gestor de Inventarios'" [shortDescription]="''" [imgSrc]="'img/imgpj_2.png'"></app-containerbox-project>
-      <app-containerbox-project [title]="'Generador TOML Users'" [shortDescription]="''" [imgSrc]="'img/imgpj_2.png'"></app-containerbox-project>
-      <app-containerbox-project [title]="'Lenguajes & Frameworks API'" [shortDescription]="''" [imgSrc]="'img/imgpj_1.png'"></app-containerbox-project>
-    </ng-container>
+    <app-containerbox-project
+      *ngFor="let project of projects"
+      [title]="project.title"
+      [shortDescription]="project.shortDescription"
+      [imgSrc]="project.imgSrc">
+    </app-containerbox-project>
   </div>
 </section>
 

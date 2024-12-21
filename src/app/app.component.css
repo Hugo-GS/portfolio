@@ -76,18 +76,15 @@ header {
 .label-description span {
   color: var(--color-yellow_light);
 }
-
 .descriptions .label-description.line-title {
   color: var(--color-green_light);
 }
-
 .typing {
   border-right: 2px solid var(--color-green);
   white-space: nowrap;
   overflow: hidden;
   animation: typing 2s steps(30, end), blink-caret 0.75s step-end infinite;
 }
-
 @keyframes typing {
   from {
     width: 0;
@@ -96,7 +93,6 @@ header {
     width: 100%;
   }
 }
-
 @keyframes blink-caret {
   from,
   to {
@@ -114,7 +110,18 @@ header {
     padding: 100px 20px 60px 20px;
   }
 }
-
 @media (max-width: 660px) {
-
+  .box-projects {
+    grid-template-columns: 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    padding: 0 20px;
+  }
+  .projects {
+    padding: 20px 0;
+  }
+  .projects > h2 {
+    padding: 0 40px;
+    font-size: 1.5rem;
+  }
 }

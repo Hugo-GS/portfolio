@@ -1,7 +1,6 @@
 :host {
   --width-box: 425px;
 }
-
 .containerBox-small {
   width: var(--width-box);
   border: var(--weight-border) solid transparent;
@@ -10,13 +9,11 @@
   font-family: "Ubuntu", sans-serif;
   background-color: var(--color-bg_dim);
   transition: border 0.3s;
-
   &:hover {
     border: var(--weight-border) solid var(--color-border-project);
     cursor: pointer;
   }
 }
-
 .containerBox-header {
   display: flex;
   align-items: center;
@@ -24,7 +21,6 @@
   padding: 10px;
   position: relative;
 }
-
 .circle {
   width: 20px;
   height: 20px;
@@ -35,31 +31,25 @@
   justify-content: center;
   transition: filter 0.3s;
 }
-
 .circle:hover {
   filter: brightness(0.9);
 }
-
 .group-circle {
   display: flex;
   column-gap: 5px;
   position: absolute;
   right: 10px;
 }
-
 .close {
   background-color: var(--color-red);
 }
-
 .minimize {
   background-color: var(--color-yellow);
 }
-
 .title-group {
   flex-grow: 1;
   color: var(--color-yellow_light_diff);
 }
-
 .title {
   white-space: nowrap;
   text-align: center;
@@ -69,19 +59,16 @@
   left: 50%;
   transform: translateX(-50%);
 }
-
 .containerBox-body {
   background-color: var(--color-bg_dim);
   color: var(--color-yellow_light);
   overflow: hidden;
 }
-
 .containerBox-body > picture {
   display: block;
   width: 100%;
   height: 225px;
   overflow: hidden;
-
   background-image: linear-gradient(#303030 2px, transparent 2px),
     linear-gradient(to right, #303030 2px, transparent 2px);
   background-size: 32px 32px;
@@ -96,7 +83,6 @@
 .containerBox-small:hover picture > img {
   scale: 1.1;
 }
-
 .containerBox-body-description {
   padding: 10px;
 }
@@ -127,18 +113,43 @@
   border: 1px solid var(--color-red);
   background-color: var(--color-red-label);
 }
-
 .label-technology-blue {
   border: 1px solid var(--color-bg_diff_blue);
   background-color: var(--color-bg_diff_blue-label);
 }
-
 .label-technology-green {
   border: 1px solid var(--color-green-bold);
   background-color: var(--color-green-bold-label);
 }
-
 .label-technology-grey {
   border: 1px solid var(--color-grey);
   background-color: var(--color-grey-label);
+}
+@media (max-width: 660px) {
+  :host {
+    --width-box: 100%;
+  }
+  .containerBox-small {
+    max-width: 425px;
+    margin: 0 auto;
+  }
+  .containerBox-body > picture {
+    height: 200px;
+  }
+  .title {
+    font-size: 0.9rem;
+  }
+  .containerBox-body-technologies {
+    padding: 8px;
+    gap: 4px;
+  }
+}
+
+@media (max-width: 375px) {
+  .containerBox-body > picture {
+    height: 180px;
+  }
+  .containerBox-body-description {
+    padding: 8px;
+  }
 }
