@@ -1,5 +1,6 @@
 import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
-import { LabelTechnologyComponent, Technology } from "../label-technology/label-technology.component";
+import { LabelTechnologyComponent } from "../label-technology/label-technology.component";
+import { Technology } from "../label-technology/enums/technology.enum";
 import { CommonModule } from '@angular/common';
 
 @Component({

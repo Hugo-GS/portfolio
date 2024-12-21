@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Technology } from './enums/technology.enum';
 import { TECHNOLOGY_ICONS } from './constants/technology-icons';
 
@@ -12,6 +13,9 @@ import { TECHNOLOGY_ICONS } from './constants/technology-icons';
 })
 export class LabelTechnologyComponent {
   @Input() technology: Technology = Technology.Default;
+
+  constructor(private readonly sanitizer: DomSanitizer) {}
+
   get technologyClass(): string {
     const classMap = {
       [Technology.Angular]: 'label-technology-red',
@@ -30,8 +34,8 @@ export class LabelTechnologyComponent {
     return classMap[this.technology] || '';
   }
 
-  getIconPath(): string {
+  getIconPath(): SafeHtml {
     const icon = TECHNOLOGY_ICONS.find(i => i.name === this.technology);
-    return icon?.path ?? '';
+    return this.sanitizer.bypassSecurityTrustHtml(icon?.path ?? '');
   }
 }

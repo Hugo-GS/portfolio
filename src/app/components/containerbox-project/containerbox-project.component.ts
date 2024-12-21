@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { LabelTechnologyComponent, Technology } from '../label-technology/label-technology.component';
+import { LabelTechnologyComponent } from '../label-technology/label-technology.component';
+import { Technology } from '../label-technology/enums/technology.enum';
 import { CommonModule } from '@angular/common';
 import { ModalProjectComponent } from '../modal-project/modal-project.component';
-
 
 @Component({
   selector: 'app-containerbox-project',
@@ -26,7 +26,7 @@ export class ContainerboxProjectComponent {
   }
 
   closeModal() {
-    this.isModalOpen = false; // Manejar el cierre del modal
+    this.isModalOpen = false;
   }
 
 }
