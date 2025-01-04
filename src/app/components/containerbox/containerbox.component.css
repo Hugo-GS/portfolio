@@ -4,6 +4,7 @@
   overflow: hidden;
   font-family: "Ubuntu", sans-serif;
   background-color: var(--color-bg_dim);
+  animation: subtleBreathing 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }
 
 .containerBox-header {
@@ -18,7 +19,6 @@
   width: 20px;
   height: 20px;
   border-radius: 50%;
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -55,4 +55,17 @@
   padding: 20px;
   background-color: var(--color-bg_dim);
   color: var(--color-yellow_light);
+}
+
+@keyframes subtleBreathing {
+  0%, 100% {
+      box-shadow: 0 0 15px rgba(192, 232, 216, 0.05),
+                 inset 0 0 15px rgba(192, 232, 216, 0.025);
+      transform: scale(1);
+  }
+  50% {
+      box-shadow: 0 0 20px rgba(192, 232, 216, 0.1),
+                 inset 0 0 20px rgba(192, 232, 216, 0.05);
+      transform: scale(1.001);
+  }
 }

@@ -38,8 +38,11 @@
   --color-grey-label: #dcdcdc19;
   --color-bg-body: #282828;
   --color-scroll-line: #333333;
+  --glow-color: 192, 232, 216;
 
   --font-family-ui: "Ubuntu", sans-serif;
+  --breathing-duration: 8s;
+  --breathing-scale: 1.001;
   
 }
 

@@ -1,5 +1,7 @@
 {
   "editor.fontWeight": "normal",
   "editor.fontFamily": "'Cascadia Code', 'Courier New', monospace",
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font"
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font",
+  "IDX.aI.enableInlineCompletion": true,
+  "IDX.aI.enableCodebaseIndexing": true
 }
