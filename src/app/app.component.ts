@@ -46,7 +46,7 @@ export class AppComponent implements OnInit {
 
   projects: Project[] = [];
   activeSection: string = 'hero';
-  private readonly SCROLL_OFFSET = 120;
+  private readonly SCROLL_OFFSET_PERCENTAGE = 0.15; // 15% of viewport height
 
   ngOnInit(): void {
     this.loadProjects();
@@ -104,16 +104,27 @@ export class AppComponent implements OnInit {
 
   private getActiveSection(scrollPosition: number): string {
     try {
-      const activeSection = this.sections.find(section => {
+      const viewportHeight = window.innerHeight;
+      const dynamicOffset = viewportHeight * this.SCROLL_OFFSET_PERCENTAGE;
+
+      for (const section of this.sections) {
         const element = document.getElementById(section.id);
-        if (!element) return false;
+        if (!element) continue;
 
-        const { offsetTop, offsetHeight } = element;
-        return scrollPosition + this.SCROLL_OFFSET >= offsetTop &&
-               scrollPosition < offsetTop + offsetHeight;
-      });
+        const rect = element.getBoundingClientRect();
+        const elementTop = rect.top + window.scrollY;
+        const elementBottom = elementTop + rect.height;
 
-      return activeSection?.id ?? this.activeSection;
+        if (
+          (scrollPosition + dynamicOffset >= elementTop && scrollPosition + dynamicOffset < elementBottom) ||
+          (section.id === 'hero' && scrollPosition < elementTop) ||
+          (section.id === 'contact' && scrollPosition + viewportHeight >= document.documentElement.scrollHeight - 50)
+        ) {
+          return section.id;
+        }
+      }
+
+      return this.activeSection;
     } catch (error) {
       console.error('Error al determinar la sección activa:', error);
       return this.activeSection;

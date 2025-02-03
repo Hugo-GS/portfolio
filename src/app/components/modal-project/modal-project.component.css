@@ -55,12 +55,13 @@ picture{
   object-fit: contain;
   overflow: hidden;
   display: block;
-
+  position: relative;
 }
 .background-img {
   width: 100%;
   height: 100%;
   display: block;
+  object-fit: cover;
 }
 
 .title {
@@ -73,18 +74,39 @@ picture{
 }
 
 .content-especification {
-  display: grid;
-  grid-template-columns: 100px auto;
-  grid-column-gap: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
   padding: 20px;
-  align-items: center;
 }
+
+.content-especification > div {
+  flex: 1;
+  min-width: 250px;
+}
+
 .label {
   font-weight: bold;
+  color: var(--color-yellow);
+  margin-bottom: 10px;
 }
+
+.languages ul,
+.frameworks ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
 .languages ul li,
-.libraries ul li,
-.frameworks ul li{
+.frameworks ul li {
+  display: inline-flex;
+}
+
+.libraries ul li{
   list-style: none;
   display: inline;
 }
@@ -136,4 +158,46 @@ picture{
   .title {
     font-size: 1.5em;
   }
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  padding: 18px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 2;
+}
+
+.circle {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 0.3s;
+  cursor: pointer;
+}
+
+.circle:hover {
+  filter: brightness(0.9);
+}
+
+.group-circle {
+  display: flex;
+  column-gap: 5px;
+  position: absolute;
+  right: 10px;
+}
+
+.close {
+  background-color: var(--color-red);
+}
+
+.minimize {
+  background-color: var(--color-yellow);
 }

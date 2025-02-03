@@ -17,7 +17,7 @@ export class ModalProjectComponent implements OnInit, OnDestroy {
   @Input() langs: Technology[] = [];
   @Input() libraries: Technology[] = [];
   @Input() frameworks: Technology[] = [];
-  @Input() descriptionHTML: string =``;
+  @Input() descriptionContent: string = "";
   @Output() close = new EventEmitter<void>();
 
   ngOnInit(): void {

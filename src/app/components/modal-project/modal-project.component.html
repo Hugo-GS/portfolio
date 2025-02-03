@@ -1,34 +1,46 @@
 <div class="modal-overlay" (click)="closeModal()">
   <div class="modal" (click)="$event.stopPropagation()">
+    <div class="modal-header">
+      <div class="group-circle">
+        <div class="circle minimize">
+          <svg viewBox="0 0 24 24" width="12" height="12">
+            <line
+              x1="4"
+              y1="12"
+              x2="20"
+              y2="12"
+              stroke="white"
+              stroke-width="2"
+            />
+          </svg>
+        </div>
+        <div class="circle close" (click)="closeModal()">
+          <svg viewBox="0 0 24 24" width="12" height="12">
+            <line x1="4" y1="4" x2="20" y2="20" stroke="white" stroke-width="2" />
+            <line x1="20" y1="4" x2="4" y2="20" stroke="white" stroke-width="2" />
+          </svg>
+        </div>
+      </div>
+    </div>
     <picture>
       <img [src]="srcImgBg" alt="Background Image" class="background-img">
     </picture>
     <h1 class="title">{{title}}</h1>
     <section class="content-especification">
-      <div class="label">Lenguajes</div>
-      <div class="languages">
-        <ul>
-          <ng-container *ngFor="let language of langs">
-            <li>
-              <app-label-technology [technology]="language"></app-label-technology>
-            </li>
-          </ng-container>
-        </ul>
-      </div>
-      <ng-template [ngIf]="libraries.length > 0">
-        <div class="label">Librerías</div>
-        <div class="libraries">
+      <div class="languages-section">
+        <div class="label">Lenguajes</div>
+        <div class="languages">
           <ul>
-            <ng-container *ngFor="let library of libraries">
+            <ng-container *ngFor="let language of langs">
               <li>
-                <app-label-technology [technology]="library"></app-label-technology>
+                <app-label-technology [technology]="language"></app-label-technology>
               </li>
             </ng-container>
           </ul>
         </div>
-      </ng-template>
-      <ng-template [ngIf]="frameworks.length > 0">
-        <div class="label">Frameworks</div>
+      </div>
+      <div class="technologies-section">
+        <div class="label">Tecnologías</div>
         <div class="frameworks">
           <ul>
             <ng-container *ngFor="let framework of frameworks">
@@ -38,7 +50,7 @@
             </ng-container>
           </ul>
         </div>
-      </ng-template>
+      </div>
     </section>
     <section class="links">
       <a [href]="hrefGitHubRepo" class="btn-github">
@@ -48,7 +60,7 @@
         <span>View on Github</span>
       </a>
     </section>
-    <section class="content-description" [innerHTML]="descriptionHTML">
+    <section class="content-description" [innerHTML]="descriptionContent">
     </section>
   </div>
 </div>

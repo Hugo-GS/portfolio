@@ -85,12 +85,23 @@
 }
 .containerBox-body-description {
   padding: 10px;
+  color: var(--color-yellow_light);
 }
 .containerBox-body-technologies {
+  padding: 10px;
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
+}
+.containerBox-body-content {
   padding: 10px;
+  color: var(--color-yellow_light);
+  border-top: 2px solid var(--color-border-project);
+  margin-top: 10px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  max-height: 150px;
+  overflow-y: auto;
 }
 .label-technology {
   display: flex;
