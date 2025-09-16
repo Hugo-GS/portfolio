@@ -2,7 +2,7 @@
   {
     "Title": "Compilador de graficos UML",
     "ImgSrc": "",
-    "Langs":["Python"],
+    "Langs": ["Python"],
     "Frameworks": ["Bottle"],
     "Libraries": [],
     "DescripcionContent": "<p>Este proyecto se realizo para poder agilizar la creación de diagramas UML y como una nueva propuesta de lenguaje para programar estos diagramas tomando de inspiración Python.</p> # Desarrollo"

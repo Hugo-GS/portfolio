@@ -16,6 +16,7 @@
   --color-purple: #d3869b;
   --color-bg_diff_blue: #0f3a42;
   --color-bg__diff_blue_aqua: #215962;
+  --color-selection-bg: #2f6f79;
   --color-bg_diff_red: #472322;
   --color-bg_visual_yellow: #574833;
   --color-grey0: #7c6f64;
@@ -60,4 +61,14 @@ body {
   /*width: 100vw;*/
   height: 100vh;
   background-color: var(--color-bg-body);
+}
+
+::selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-yellow_light);
+}
+
+::-moz-selection {
+  background-color: var(--color-selection-bg);
+  color: var(--color-yellow_light);
 }

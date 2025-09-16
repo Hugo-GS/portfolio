@@ -21,9 +21,11 @@ export class ModalProjectComponent implements OnInit, OnDestroy {
   @Output() close = new EventEmitter<void>();
 
   ngOnInit(): void {
-    document.body.style.overflow = 'hidden';
     const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
-    document.body.style.paddingRight = `${scrollbarWidth}px`;
+    document.body.style.overflow = 'hidden';
+    if (scrollbarWidth > 0) {
+      document.body.style.paddingRight = `${scrollbarWidth}px`;
+    }
   }
 
   ngOnDestroy(): void {
@@ -35,5 +37,4 @@ export class ModalProjectComponent implements OnInit, OnDestroy {
     this.close.emit();
   }
 }
-
 
