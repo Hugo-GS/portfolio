@@ -253,6 +253,10 @@ header {
   background-color: var(--color-yellow);
 }
 
+.color-square.yellow-light {
+  background-color: var(--accent-yellow-light);
+}
+
 .color-square.green {
   background-color: var(--color-green);
 }

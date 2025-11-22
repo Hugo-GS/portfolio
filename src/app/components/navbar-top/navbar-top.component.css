@@ -17,6 +17,13 @@
   pointer-events: none;
 }
 
+.center-section {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  pointer-events: auto;
+}
+
 /* Left Section */
 .left-section {
   display: flex;
@@ -165,7 +172,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--accent-yellow);
+  color: var(--accent-yellow-light);
   font-weight: bold;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   border: 1px solid var(--topbar-border);
