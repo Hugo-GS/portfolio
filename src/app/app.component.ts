@@ -130,4 +130,13 @@ export class AppComponent implements OnInit {
       return this.activeSection;
     }
   }
+
+  scrollToProjects() {
+    const section = document.getElementById('projects');
+    if (section) {
+      const offset = 80;
+      const sectionTop = section.getBoundingClientRect().top + window.scrollY - offset;
+      window.scrollTo({ top: sectionTop, behavior: 'smooth' });
+    }
+  }
 }

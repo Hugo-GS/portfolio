@@ -11,7 +11,8 @@ import { Component, Input, OnInit} from '@angular/core';
 export class NavbarTopComponent implements OnInit {
 
   @Input() activeSection: string = 'hero';
-  currentTime: string = "";
+  formattedDate: string = "";
+  formattedTime: string = "";
 
   scrollTo(sectionId: string) {
     const section = document.getElementById(sectionId);
@@ -22,18 +23,21 @@ export class NavbarTopComponent implements OnInit {
     }
   }
 
+
   ngOnInit() {
     this.updateTime();
-    setInterval(() => this.updateTime(), 60000);
+    setInterval(() => this.updateTime(), 1000);
   }
 
   updateTime() {
     const now = new Date();
     const day = now.getDate();
-    const month = now.toLocaleString('es-ES', { month: 'short' });
-    const hours = now.getHours();
+    const month = now.toLocaleDateString('es-ES', { month: 'short' });
+    const hours = now.getHours().toString().padStart(2, '0');
     const minutes = now.getMinutes().toString().padStart(2, '0');
-    this.currentTime = `${day} de ${month} ${hours}:${minutes}`;
+    
+    this.formattedDate = `${day} ${month}`;
+    this.formattedTime = `${hours}:${minutes}`;
   }
 
 }

@@ -44,6 +44,20 @@
   --font-family-ui: "Ubuntu", sans-serif;
   --breathing-duration: 8s;
   --breathing-scale: 1.001;
+
+  /* Terminal theme colors */
+  --desktop-bg: #1A1A1A;
+  --window-bg: rgba(40, 40, 40, 0.95);
+  --window-border: #504945;
+  --titlebar-bg: #1d2021;
+  --text-main: #ebdbb2;
+  --text-muted: #928374;
+  --topbar-bg: #282828;
+  --topbar-border: #3c3836;
+  --accent-purple: #d3869b;
+  --accent-yellow: #fabd2f;
+  --accent-blue: #83a598;
+  --accent-sage: #A3B18A;
   
 }
 
