@@ -1,60 +1,115 @@
-.containerBox-main {
-  border: var(--weight-border) solid var(--color-border);
-  border-radius: 10px;
+.window {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--window-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--window-border);
+  border-radius: 8px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
   overflow: hidden;
   font-family: "Ubuntu", sans-serif;
-  background-color: var(--color-bg_dim);
-  animation: subtleBreathing 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  z-index: 10;
 }
 
-.containerBox-header {
+.window.minimized {
+  display: none;
+}
+
+.window.dragging {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.titlebar {
+  height: 32px;
+  background-color: var(--titlebar-bg);
   display: flex;
   align-items: center;
-  background-color: var(--color-bg__diff_blue_aqua);
-  padding: 10px;
-  position: relative;
+  justify-content: space-between;
+  padding: 0 12px;
+  border-bottom: 1px solid var(--window-border);
+  cursor: grab;
 }
 
-.circle {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+.titlebar.dragging {
+  cursor: grabbing;
+}
+
+.titlebar-content {
   display: flex;
   align-items: center;
-  justify-content: center;
-  transition: filter 0.3s;
-}
-
-.circle:hover {
-  filter: brightness(0.9);
-}
-
-.group-circle {
-  display: flex;
-  column-gap: 5px;
-  position: absolute;
-  right: 10px;
-}
-
-.close {
-  background-color: var(--color-red);
-}
-
-.minimize {
-  background-color: var(--color-yellow);
+  gap: 8px;
 }
 
 .title {
-  flex-grow: 1;
-  text-align: center;
-  font-weight: bold;
-  color: var(--color-yellow_light);
+  color: var(--text-main);
+  font-size: 12px;
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: normal;
 }
 
-.containerBox-body {
+.iconWindow {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-main);
+}
+
+.window-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.control-btn {
+  width: 20px;
+  height: 20px;
+  border: none;
+  border-radius: 50%;
+  color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.minimize-btn {
+  background-color: var(--color-yellow);
+}
+
+.minimize-btn:hover {
+  filter: brightness(0.9);
+}
+
+.close-btn {
+  background-color: var(--color-red);
+}
+
+.close-btn:hover {
+  filter: brightness(0.9);
+}
+
+.window-content {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
   padding: 20px;
-  background-color: var(--color-bg_dim);
-  color: var(--color-yellow_light);
+  background-color: var(--window-bg);
+  color: var(--text-main);
+}
+
+:global(body.dragging) {
+  cursor: grabbing;
+  user-select: none;
+}
+
+.window-content :global(.contentHero) {
+  position: relative;
+  z-index: 3;
 }
 
 @keyframes subtleBreathing {
@@ -68,4 +123,8 @@
                  inset 0 0 20px rgba(192, 232, 216, 0.05);
       transform: scale(1.001);
   }
+}
+
+.window {
+  animation: subtleBreathing 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

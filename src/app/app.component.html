@@ -62,12 +62,36 @@
             </span>
           </div>
         </div>
+
+        <div class="terminal-colors">
+          <div class="color-square red"></div>
+          <div class="color-square orange"></div>
+          <div class="color-square yellow"></div>
+          <div class="color-square yellow-light"></div>
+          <div class="color-square green"></div>
+          <div class="color-square blue"></div>
+          <div class="color-square purple"></div>
+          <div class="color-square aqua"></div>
+          <div class="color-square grey"></div>
+        </div>
+
+        <div class="command-prompt">
+          <span class="prompt-arrow">➜</span>&nbsp;
+          <span class="prompt-tilde">~</span>&nbsp;
+          <span class="cursor-blink"></span>
+        </div>
       </div>
       <div>
         <app-donut-animation></app-donut-animation>
       </div>
     </div>
   </app-containerbox>
+
+  <div class="scroll-indicator" (click)="scrollToProjects()">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <polyline points="6,9 12,15 18,9"></polyline>
+    </svg>
+  </div>
 </section>
 
 <section class="projects" id="projects">
