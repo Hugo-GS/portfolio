@@ -17,14 +17,12 @@
       <div class="title">{{ titleContainer }}</div>
     </div>
     <div class="window-controls">
-      <button class="control-btn minimize-btn"
-              (click)="$event.stopPropagation(); onMinimize()">
+      <button class="control-btn minimize-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="5" y1="12" x2="19" y2="12"/>
         </svg>
       </button>
-      <button class="control-btn close-btn"
-              (click)="$event.stopPropagation(); onClose()">
+      <button class="control-btn close-btn">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <line x1="18" y1="6" x2="6" y2="18"/>
           <line x1="6" y1="6" x2="18" y2="18"/>
