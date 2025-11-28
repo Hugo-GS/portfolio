@@ -64,17 +64,23 @@
   color: var(--color-yellow_light);
   overflow: hidden;
 }
-.containerBox-body > picture {
-  display: block;
+.image-wrapper {
+  position: relative;
   width: 100%;
   height: 225px;
+  overflow: hidden;
+}
+.containerBox-body picture {
+  display: block;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   background-image: linear-gradient(#303030 2px, transparent 2px),
     linear-gradient(to right, #303030 2px, transparent 2px);
   background-size: 32px 32px;
   background-color: var(--color-body);
 }
-.containerBox-body > picture > img {
+.containerBox-body picture > img {
   object-fit: cover;
   width: 100%;
   height: 100%;
@@ -83,12 +89,59 @@
 .containerBox-small:hover picture > img {
   scale: 1.1;
 }
+.hover-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, transparent 100%);
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 16px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.containerBox-small:hover .hover-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+.view-details-badge {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 0.875rem;
+  font-weight: bold;
+  color: var(--color-aqua);
+  background-color: var(--color-bg_dim);
+  padding: 6px 12px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+}
 .containerBox-body-description {
-  padding: 10px;
+  padding: 3px;
   color: var(--color-yellow_light);
 }
 .containerBox-body-technologies {
   padding: 10px;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.tech-stack-title {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 0.75rem;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+.tech-stack-list {
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
@@ -144,7 +197,7 @@
     max-width: 425px;
     margin: 0 auto;
   }
-  .containerBox-body > picture {
+  .image-wrapper {
     height: 200px;
   }
   .title {
@@ -154,12 +207,26 @@
     padding: 8px;
     gap: 4px;
   }
+  .view-details-badge {
+    font-size: 0.75rem;
+    padding: 5px 10px;
+  }
+  .hover-overlay {
+    padding-bottom: 12px;
+  }
 }
 @media (max-width: 375px) {
-  .containerBox-body > picture {
+  .image-wrapper {
     height: 180px;
   }
   .containerBox-body-description {
     padding: 8px;
+  }
+  .view-details-badge {
+    font-size: 0.7rem;
+    padding: 4px 8px;
+  }
+  .hover-overlay {
+    padding-bottom: 10px;
   }
 }

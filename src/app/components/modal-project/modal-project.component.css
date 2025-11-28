@@ -1,175 +1,75 @@
-:host{
-  --height-picture: 400px;
-  --width-picture: 794px;
-}
 .modal-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(4px);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: 1000;
-  overflow: hidden;
+  padding: 1rem;
 }
+
 .modal {
-  max-width: 800px;
-  min-width: 569px;
-  width: 90%;
-  max-height: 90vh;
+  width: 100%;
+  max-width: 986px;
+  max-height: 80vh;
   background-color: var(--color-bg-body);
   border-radius: 8px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  border: 3px solid var(--color-border-project);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  border: 2px solid rgba(137, 180, 130, 0.3);
   font-family: var(--font-family-ui);
   color: var(--color-yellow_light);
-  z-index: 1001;
-  overflow-y: auto;
-  position: relative;
-  scrollbar-width:auto;
-  scrollbar-color: #eaeaea #eaeaea;
-}
-.modal.show {
-
-}
-.modal::-webkit-scrollbar {
-  background: #eaeaea;
-  width: 12px;
-}
-.modal::-webkit-scrollbar-track {
-  background: #eaeaea;
-}
-.modal::-webkit-scrollbar-thumb {
-  background: #eaeaea;
-  border-radius: 4px;
-}
-.modal:hover::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.5);
-}
-picture{
-  width: 100%;
-  height: 400px;
-  object-fit: contain;
   overflow: hidden;
-  display: block;
-  position: relative;
-}
-.background-img {
-  width: 100%;
-  height: 100%;
-  display: block;
-  object-fit: cover;
-}
-
-.title {
-  width: 100%;
-  padding-left: 20px;
-  font-size: 2em;
-  font-weight: bold;
-  border-bottom: 2px solid #eaeaea;
-
-}
-
-.content-especification {
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
+  flex-direction: column;
+  animation: modalFadeIn 0.2s ease-out;
 }
 
-.content-especification > div {
-  flex: 1;
-  min-width: 250px;
-}
-
-.label {
-  font-weight: bold;
-  color: var(--color-yellow);
-  margin-bottom: 10px;
-}
-
-.languages ul,
-.frameworks ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.languages ul li,
-.frameworks ul li {
-  display: inline-flex;
-}
-
-.libraries ul li{
-  list-style: none;
-  display: inline;
-}
-.content-description {
-  padding: 20px;
-  border-top: 2px solid #eaeaea;
-}
-@media (max-width: 600px) {
-  .title {
-    font-size: 1.5em;
+@keyframes modalFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
   }
-}
-.links{
-  padding: 20px;
-}
-.btn-github {
-  width: 200px;
-  text-decoration: none;
-  cursor: pointer;
-  display: flex;
-  gap: 0.5rem;
-  border: none;
-  transition: color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
-  transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1),
-  background-color 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
-  border-radius: 5px;
-  font-weight: 800;
-  place-content: center;
-  padding: 0.75rem 1rem;
-  font-size: 0.825rem;
-  line-height: 1rem;
-  background-color: rgba(0, 0, 0, 0.773);
-  box-shadow:
-    inset 0 1px 0 0 rgba(255, 255, 255, 0.04),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.04);
-  color: var(--color-yellow_light);
-}
-.btn-github:hover {
-  color: var(--color-yellow);
-  transform: translate(0, -0.25rem);
-  background-color: rgba(0, 0, 0, 0.677);
-}
-@media (max-width: 600px) {
-  .modal {
-    width: 95%;
-    min-width: auto;
-    max-height: 95vh;
-  }
-  .title {
-    font-size: 1.5em;
+  to {
+    opacity: 1;
+    transform: scale(1);
   }
 }
 
+/* Header */
 .modal-header {
   display: flex;
   align-items: center;
-  background-color: transparent;
-  padding: 18px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
+  justify-content: space-between;
+  background-color: var(--titlebar-bg);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.terminal-icon {
+  color: var(--color-green);
+}
+
+.terminal-path {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 0.9rem;
+  font-weight: bold;
+  color: var(--color-green);
+}
+
+.group-circle {
+  display: flex;
+  column-gap: 5px;
 }
 
 .circle {
@@ -187,17 +87,234 @@ picture{
   filter: brightness(0.9);
 }
 
-.group-circle {
-  display: flex;
-  column-gap: 5px;
-  position: absolute;
-  right: 10px;
-}
-
 .close {
   background-color: var(--color-red);
 }
 
 .minimize {
   background-color: var(--color-yellow);
+}
+
+/* Body - Dos columnas */
+.modal-body {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+  overflow: hidden;
+}
+
+/* Columna izquierda - Imagen */
+.image-column {
+  width: 50%;
+  background-color: rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: 300px;
+}
+
+/* Columna derecha - Contenido */
+.content-column {
+  width: 50%;
+  padding: 2rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.content-column::-webkit-scrollbar {
+  width: 8px;
+}
+
+.content-column::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.content-column::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+}
+
+.content-column::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.project-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: var(--color-yellow_light);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.title-underline {
+  width: 80px;
+  height: 4px;
+  background-color: var(--color-yellow);
+}
+
+.project-description {
+  color: var(--color-yellow_light_diff);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.project-description h2 {
+  font-size: 1.25rem;
+  color: var(--color-yellow_light);
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.project-description p {
+  margin-bottom: 1rem;
+}
+
+.project-description ul {
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.project-description li {
+  margin-bottom: 0.5rem;
+}
+
+.tech-stack-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.tech-stack-title {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 0.875rem;
+  color: var(--color-blue);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin: 0;
+}
+
+.tech-stack-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+/* Botones */
+.action-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.btn-demo,
+.btn-project,
+.btn-github {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-decoration: none;
+  padding: 0.75rem 1.25rem;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: var(--color-yellow_light);
+}
+
+.btn-demo {
+  border-color: var(--color-green);
+  color: var(--color-green);
+}
+
+.btn-demo:hover {
+  background-color: var(--color-green);
+  color: var(--color-bg-body);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(137, 180, 130, 0.3);
+}
+
+.btn-project {
+  border-color: var(--color-blue);
+  color: var(--color-blue);
+}
+
+.btn-project:hover {
+  background-color: var(--color-blue);
+  color: var(--color-bg-body);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(125, 174, 163, 0.3);
+}
+
+.btn-github:hover {
+  border-color: var(--color-yellow_light);
+  background-color: rgba(0, 0, 0, 0.6);
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .modal {
+    max-width: 95%;
+    max-height: 95vh;
+  }
+
+  .modal-body {
+    flex-direction: column;
+  }
+
+  .image-column,
+  .content-column {
+    width: 100%;
+  }
+
+  .image-column {
+    max-height: 300px;
+  }
+
+  .content-column {
+    padding: 1.5rem;
+  }
+
+  .project-title {
+    font-size: 1.5rem;
+  }
+
+  .terminal-path {
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .content-column {
+    padding: 1rem;
+  }
+
+  .project-title {
+    font-size: 1.25rem;
+  }
+
+  .action-buttons {
+    flex-direction: column;
+  }
+
+  .btn-demo,
+  .btn-project,
+  .btn-github {
+    width: 100%;
+  }
 }

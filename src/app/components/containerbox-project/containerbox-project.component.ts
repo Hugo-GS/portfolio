@@ -19,6 +19,9 @@ export class ContainerboxProjectComponent {
   @Input() technologies: Technology[] = [];
   @Input() langs: Technology[] = [];
   @Input() descriptionContent: string = "";
+  @Input() hrefGitHubRepo?: string;
+  @Input() demoURL?: string;
+  @Input() projectURL?: string;
 
   isModalOpen: boolean = false;
 

@@ -25,20 +25,30 @@
     </div>
   </div>
   <div class="containerBox-body">
-    <picture>
-      <img [src]="imgSrc" alt="" srcset="" />
-    </picture>
+    <div class="image-wrapper">
+      <picture>
+        <img [src]="imgSrc" alt="" srcset="" />
+      </picture>
+      <div class="hover-overlay">
+        <span class="view-details-badge">
+          &gt; Ver_Detalles_del_Proyecto
+        </span>
+      </div>
+    </div>
     <div class="containerBox-body-description">
       {{ shortDescription }}
     </div>
     <div class="containerBox-body-technologies">
-      <ng-container *ngFor="let language of langs">
-        <app-label-technology [technology]="language"></app-label-technology>
-      </ng-container>
+      <h3 class="tech-stack-title">Tech Stack</h3>
+      <div class="tech-stack-list">
+        <ng-container *ngFor="let language of langs">
+          <app-label-technology [technology]="language"></app-label-technology>
+        </ng-container>
 
-      <ng-container *ngFor="let technology of technologies">
-        <app-label-technology [technology]="technology"></app-label-technology>
-      </ng-container>
+        <ng-container *ngFor="let technology of technologies">
+          <app-label-technology [technology]="technology"></app-label-technology>
+        </ng-container>
+      </div>
     </div>
   </div>
 </div>
@@ -51,5 +61,8 @@
   [frameworks]="technologies"
   [libraries]="[]"
   [descriptionContent]="descriptionContent"
+  [hrefGitHubRepo]="hrefGitHubRepo"
+  [demoURL]="demoURL"
+  [projectURL]="projectURL"
 >
 </app-modal-project>
