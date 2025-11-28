@@ -2,18 +2,11 @@
   {
     "Title": "Sistema de información para la gestión integral de lavanderías",
     "ImgSrc": "",
+    "TypeProject":"",
     "Langs": ["TypeScript"],
     "Frameworks": ["Angular", "NestJS"],
     "Libraries": [],
     "DescripcionContent": "<h2>Introducción</h2><p>RopaClean es una solución web enfocada en digitalizar la operación de lavanderías, desde el alta de pedidos hasta su entrega. Este proyecto se compone de un frontend en Angular y un backend en NestJS, pensados para trabajar de forma desacoplada mediante una API REST.</p><h2>Alcance funcional</h2><ul><li><b>Pedidos:</b> registro, clasificado por tipo de prenda/servicio, actualización de estado (recibido, en proceso, listo, entregado) y cálculo de totales.</li><li><b>Clientes:</b> alta rápida, historial de pedidos y datos de contacto.</li><li><b>Tarifas y servicios:</b> catálogo editable por prenda y tipo de servicio (lavado, planchado, express).</li><li><b>Usuarios y permisos:</b> separación prevista por rol (administración/operación) para limitar acciones sensibles.</li><li><b>Reportes operativos:</b> vistas para seguimiento diario (pedidos abiertos, tickets por estado) y métricas básicas.</li></ul><h2>Arquitectura y tecnologías</h2><ul><li><b>Frontend (Angular):</b> base generada con Angular CLI 18, componentes en TypeScript, plantillas HTML y estilos CSS. Entorno de desarrollo con recarga en caliente y tooling de Angular para pruebas.</li><li><b>Backend (NestJS):</b> estructura inicial de un servicio REST en TypeScript con controladores, servicios y pruebas listas para ampliar. Scripts para desarrollo, producción y testing.</li><li><b>Comunicación:</b> API REST entre frontend y backend; manejo de estados y validaciones en cliente; control de errores y respuestas tipadas.</li><li><b>Contenedores:</b> orquestación local prevista mediante <code>docker-compose</code> para facilitar el arranque de servicios.</li></ul><h2>Estado actual y ejecución</h2><ul><li><b>Frontend:</b> proyecto base funcional con servidor de desarrollo local (<code>ng serve</code>) en <code>http://localhost:4200/</code>, listo para integrar pantallas de pedidos, clientes y tarifas.</li><li><b>Backend:</b> scaffolding de NestJS con scripts para ejecución en modo desarrollo (<code>npm run start:dev</code>) y pruebas, preparado para exponer endpoints de pedidos, clientes y autenticación.</li></ul><h2>Próximos pasos</h2><ul><li>Definir modelo de datos y persistencia en el backend (ORM/cliente de base de datos y migraciones).</li><li>Implementar autenticación (por ejemplo, JWT) y autorización basada en roles.</li><li>Construir módulos de UI: flujo de alta de pedido, tablero por estados y editor de tarifas.</li><li>Agregar pruebas de integración end-to-end y pipelines de CI para validación continua.</li></ul>"
-  },
-  {
-    "Title": "Gestor de Inventarios",
-    "ImgSrc": "",
-    "Langs": ["Python"],
-    "Frameworks": ["Flask"],
-    "Libraries": [],
-    "DescripcionContent": "<h2>Introducción</h2><p>Este proyecto es un gestor de inventarios para pequeñas empresas.</p>"
   },
   {
     "Title": "Generador TOML Users",
@@ -21,14 +14,24 @@
     "Langs": ["Python"],
     "Frameworks": [],
     "Libraries": ["TKinter", "OpenPyxl"],
-    "DescripcionContent": "Generador TOML Users para BOCA(BOCA Online Contest Administrator)"
+    "DescripcionContent": "Generador TOML Users para BOCA(BOCA Online Contest Administrator)",
+    "HrefGitHubRepo": "https://github.com/Hugo-GS/creador_usuarios_boca"
   },
   {
-    "Title": "Lenguajes & Frameworks API",
+    "Title": "Backend API Service",
     "ImgSrc": "",
     "Langs": ["Python"],
     "Frameworks": [],
-    "Libraries": ["TKinter", "OpenPyxl"],
-    "DescripcionContent": "Generador TOML Users para BOCA(BOCA Online Contest Administrator)"
+    "Libraries": ["FastAPI"],
+    "DescripcionContent": "Microservicio backend diseñado para alta concurrencia. Implementa autenticación JWT, rate limiting y conexión optimizada a base de datos PostgreSQL. Documentación automática con Swagger."
+  },
+  {
+    "Title": "JS Notebook",
+    "ImgSrc": "img/jsnotebook.png",
+    "Langs": ["JavaScript"],
+    "Frameworks": [],
+    "Libraries": [],
+    "DescripcionContent": "Entorno interactivo de programación en JavaScript.",
+    "ProjectURL": "https://js-notebook-env.netlify.app/"
   }
 ]

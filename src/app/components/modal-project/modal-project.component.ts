@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter, OnInit, OnDestroy } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { LabelTechnologyComponent } from "../label-technology/label-technology.component";
 import { Technology } from "../label-technology/enums/technology.enum";
 import { CommonModule } from '@angular/common';
@@ -13,7 +13,9 @@ import { CommonModule } from '@angular/common';
 export class ModalProjectComponent implements OnInit, OnDestroy {
   @Input() title: string = "";
   @Input() srcImgBg: string = "";
-  @Input() hrefGitHubRepo: string = "";
+  @Input() hrefGitHubRepo?: string;
+  @Input() demoURL?: string;
+  @Input() projectURL?: string;
   @Input() langs: Technology[] = [];
   @Input() libraries: Technology[] = [];
   @Input() frameworks: Technology[] = [];
@@ -33,8 +35,24 @@ export class ModalProjectComponent implements OnInit, OnDestroy {
     document.body.style.paddingRight = '';
   }
 
+  @HostListener('window:keydown', ['$event'])
+  handleKeyDown(event: KeyboardEvent) {
+    if (event.key === 'Escape') {
+      this.closeModal();
+    }
+  }
+
   closeModal() {
     this.close.emit();
+  }
+
+  getProjectPath(): string {
+    return this.title
+      .toLowerCase()
+      .normalize('NFD')
+      .replace(/[\u0300-\u036f]/g, '') // Elimina acentos
+      .replace(/[^a-z0-9]+/g, '-')      // Reemplaza caracteres especiales con guiones
+      .replace(/^-+|-+$/g, '');         // Elimina guiones al inicio y final
   }
 }
 

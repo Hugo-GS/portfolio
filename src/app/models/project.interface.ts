@@ -8,6 +8,9 @@ export interface Project {
   frameworks: Technology[];
   libraries: Technology[];
   descriptionContent: string;
+  hrefGitHubRepo?: string;
+  demoURL?: string;
+  projectURL?: string;
 }
 
 export interface ProjectJSON {
@@ -17,4 +20,7 @@ export interface ProjectJSON {
   Frameworks: string[];
   Libraries: string[];
   DescripcionContent: string;
+  HrefGitHubRepo?: string;
+  DemoURL?: string;
+  ProjectURL?: string;
 }

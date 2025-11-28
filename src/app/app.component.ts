@@ -65,7 +65,10 @@ export class AppComponent implements OnInit {
       frameworks: jsonProject.Frameworks.map(framework => this.stringToTechnology(framework)),
       libraries: jsonProject.Libraries.map(library => this.stringToTechnology(library)),
       descriptionContent: jsonProject.DescripcionContent,
-      shortDescription: ''
+      shortDescription: '',
+      hrefGitHubRepo: jsonProject.HrefGitHubRepo,
+      demoURL: jsonProject.DemoURL,
+      projectURL: jsonProject.ProjectURL
     };
   }
 
@@ -91,7 +94,10 @@ export class AppComponent implements OnInit {
         langs: [],
         frameworks: [],
         libraries: [],
-        descriptionContent: ''
+        descriptionContent: '',
+        hrefGitHubRepo: undefined,
+        demoURL: undefined,
+        projectURL: undefined
       }];
     }
   }
