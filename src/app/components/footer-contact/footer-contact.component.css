@@ -44,6 +44,23 @@ footer {
   margin-bottom: 10px;
 }
 
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s ease;
+}
+
+.social-link:hover {
+  transform: translateX(5px);
+}
+
+.social-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
 .footer-bottom {
   text-align: center;
   margin-top: 20px;

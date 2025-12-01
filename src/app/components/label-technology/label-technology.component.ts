@@ -27,9 +27,10 @@ export class LabelTechnologyComponent {
       [Technology.Bottle]: 'label-technology-purple',
       [Technology.FastAPI]: 'label-technology-blue_aqua',
       [Technology.Express]: 'label-technology-grey',
-      [Technology.TypeScript]: 'label-technology-lightblue',
+      [Technology.TypeScript]: 'label-technology-diff_blue',
       [Technology.OpenPyxl]: 'label-technology-grey',
       [Technology.TKinter]: 'label-technology-grey',
+      [Technology.React]: 'label-technology-blue_aqua',
       [Technology.Default]: 'label-technology-grey'
     };
 

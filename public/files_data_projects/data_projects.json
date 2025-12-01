@@ -28,10 +28,10 @@
   {
     "Title": "JS Notebook",
     "ImgSrc": "img/jsnotebook.png",
-    "Langs": ["JavaScript"],
+    "Langs": ["TypeScript"],
     "Frameworks": [],
-    "Libraries": [],
-    "DescripcionContent": "Entorno interactivo de programación en JavaScript.",
+    "Libraries": ["React"],
+    "DescripcionContent": "JS Notebook es un entorno de desarrollo interactivo en el navegador que combina celdas de código JavaScript ejecutable con celdas Markdown para documentación. Permite ejecutar código JS, realizar peticiones HTTP, y gestionar múltiples archivos con opciones de importación y exportación de notebooks.",
     "ProjectURL": "https://js-notebook-env.netlify.app/"
   }
 ]
