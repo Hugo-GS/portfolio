@@ -11,5 +11,6 @@ export enum Technology {
   TypeScript = 'TypeScript',
   OpenPyxl = 'OpenPyxl',
   TKinter = 'TKinter',
+  React = 'React',
   Default = 'default'
 }
