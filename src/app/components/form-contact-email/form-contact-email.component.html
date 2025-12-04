@@ -1,59 +1,117 @@
 <div class="containerBox-full">
   <fieldset>
     <legend><h2>PÓNGASE EN CONTACTO</h2></legend>
-    <form action="" class="form-email-contact">
+
+    <div *ngIf="submitStatus === 'success'" class="alert alert-success">
+      ¡Mensaje enviado exitosamente!
+    </div>
+    <div *ngIf="submitStatus === 'error'" class="alert alert-error">
+      {{ errorMessage }}
+    </div>
+
+    <form
+      [formGroup]="contactForm"
+      (ngSubmit)="onSubmit()"
+      class="form-email-contact"
+    >
       <div class="group-field">
-        <div class="form-field">
+        <div
+          class="form-field"
+          [class.focused]="contactForm.get('nombre')?.value"
+          [class.error]="isFieldInvalid('nombre')"
+        >
           <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder=" "
-              onfocus="this.parentNode.classList.add('focused')"
-              onblur="this.parentNode.classList.remove('focused')"
-              required
+            type="text"
+            id="nombre"
+            formControlName="nombre"
+            placeholder=" "
+            [attr.aria-invalid]="isFieldInvalid('nombre')"
+            [attr.aria-describedby]="
+              isFieldInvalid('nombre') ? 'nombre-error' : null
+            "
           />
           <label for="nombre">Nombre *</label>
-      </div>
-        <div class="form-field">
+          <span
+            *ngIf="isFieldInvalid('nombre')"
+            id="nombre-error"
+            class="error-message"
+          >
+            {{ getErrorMessage("nombre") }}
+          </span>
+        </div>
+
+        <div
+          class="form-field"
+          [class.focused]="contactForm.get('telefono')?.value"
+        >
           <input
-              type="tel"
-              id="telefono"
-              name="telefono"
-              placeholder=" "
-              onfocus="this.parentNode.classList.add('focused')"
-              onblur="this.parentNode.classList.remove('focused')"
-              required
+            type="tel"
+            id="telefono"
+            formControlName="telefono"
+            placeholder=" "
           />
           <label for="telefono">Número de teléfono</label>
         </div>
       </div>
 
-        <div class="form-field">
-            <input
-                type="email"
-                id="email"
-                name="email"
-                placeholder=" "
-                onfocus="this.parentNode.classList.add('focused')"
-                onblur="this.parentNode.classList.remove('focused')"
-                required
-            />
-            <label for="email">Correo electrónico *</label>
-        </div>
-        <div class="form-field textarea">
-            <textarea
-                id="comentario"
-                name="comentario"
-                rows="4"
-                placeholder=" "
-                onfocus="this.parentNode.classList.add('focused')"
-                onblur="this.parentNode.classList.remove('focused')"
-                required
-            ></textarea>
-            <label for="comentario">Mensaje</label>
-        </div>
-        <button type="submit">Enviar</button>
+      <div
+        class="form-field"
+        [class.focused]="contactForm.get('email')?.value"
+        [class.error]="isFieldInvalid('email')"
+      >
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder=" "
+          [attr.aria-invalid]="isFieldInvalid('email')"
+          [attr.aria-describedby]="
+            isFieldInvalid('email') ? 'email-error' : null
+          "
+        />
+        <label for="email">Correo electrónico *</label>
+        <span
+          *ngIf="isFieldInvalid('email')"
+          id="email-error"
+          class="error-message"
+        >
+          {{ getErrorMessage("email") }}
+        </span>
+      </div>
+
+      <div
+        class="form-field textarea"
+        [class.focused]="contactForm.get('comentario')?.value"
+        [class.error]="isFieldInvalid('comentario')"
+      >
+        <textarea
+          id="comentario"
+          formControlName="comentario"
+          rows="4"
+          placeholder=" "
+          [attr.aria-invalid]="isFieldInvalid('comentario')"
+          [attr.aria-describedby]="
+            isFieldInvalid('comentario') ? 'comentario-error' : null
+          "
+        ></textarea>
+        <label for="comentario">Mensaje *</label>
+        <span
+          *ngIf="isFieldInvalid('comentario')"
+          id="comentario-error"
+          class="error-message"
+        >
+          {{ getErrorMessage("comentario") }}
+        </span>
+      </div>
+
+      <button
+        type="submit"
+        [disabled]="isSubmitting"
+        [class.loading]="isSubmitting"
+      >
+        <span *ngIf="!isSubmitting">Enviar</span>
+        <span *ngIf="isSubmitting">Enviando...</span>
+      </button>
     </form>
   </fieldset>
 </div>
